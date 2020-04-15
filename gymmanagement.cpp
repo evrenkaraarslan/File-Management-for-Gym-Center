@@ -69,25 +69,25 @@ int main()
       	cout<<"        ------------            ";
       	gotoxy(10,6);
       	cout<<"      ----------------          ";
-   		gotoxy(10,8);
-		cout<<"         <->     <->            ";
-		gotoxy(10,10);
-		cout<<"      -----       -----          ";
-		gotoxy(10,12);
-		cout<<"      WELCOME TO SYSTEM         ";
+   	gotoxy(10,8);
+	cout<<"         <->     <->            ";
+	gotoxy(10,10);
+	cout<<"      -----       -----          ";
+	gotoxy(10,12);
+	cout<<"      WELCOME TO SYSTEM         ";
 
-		gotoxy(80,2);
-		cout<<"          --------              ";
-		gotoxy(80,4);
-		cout<<"        ------------            ";
-		gotoxy(80,6);
-		cout<<"      ----------------          ";
-		gotoxy(80,8);
-		cout<<"         <->     <->            ";
-		gotoxy(80,10);
-		cout<<"      -----       -----         ";
-		gotoxy(80,12);
-		cout<<"        STAY HEALTHY            ";
+	gotoxy(80,2);
+	cout<<"          --------              ";
+	gotoxy(80,4);
+	cout<<"        ------------            ";
+	gotoxy(80,6);
+	cout<<"      ----------------          ";
+	gotoxy(80,8);
+	cout<<"         <->     <->            ";
+	gotoxy(80,10);
+	cout<<"      -----       -----         ";
+	gotoxy(80,12);
+	cout<<"        STAY HEALTHY            ";
 
         gotoxy(42,2);
         cout<<"|||||||||||||||||||||||||||||||";
@@ -103,7 +103,7 @@ int main()
         cout<<"3-Update Information of the member";
         gotoxy(42,11);
         cout<<"4-Search member information";
-		gotoxy(42,13);
+	gotoxy(42,13);
         cout<<"5-Delete the information of member";
         gotoxy(42,15);
         cout<<"6-Exit";
@@ -127,14 +127,14 @@ int main()
 			case 4:
 				system("cls");
 				int num;
-                cout << "\n\n\tPlease enter the member number to search: ";
-                cin>>num;
-                fitnessobject.searchmember(num);
-                break;
-            case 5:
-            	system("cls");
-            	fitnessobject.deletee();
-            	break;
+                                cout << "\n\n\tPlease enter the member number to search: ";
+                                cin>>num;
+                                fitnessobject.searchmember(num);
+                                break;
+                        case 5:
+            	                system("cls");
+            	                fitnessobject.deletee();
+            	                break;
 			default:
 				return 0;
 				break;
@@ -166,8 +166,8 @@ void fitness::createmember()
     cin>>age;
     gotoxy(40,16);
     cout << "The Account has been created!!";
-	gotoxy(40,18);
-	cout << "Press enter to go main menu";
+    gotoxy(40,18);
+    cout << "Press enter to go main menu";
     getch();
     system("cls");
 }
@@ -176,14 +176,14 @@ void fitness::createmember()
 
 void fitness::write() 
 {
-	ofstream evren;
+    ofstream evren;
     evren.open("gymmember.dat", ios::out|ios::binary | ios::app);
     fitt.createmember();
     
   //  evren.write((char * ) & fitt, sizeof(fitness));
   
     evren.write(reinterpret_cast<char *>(&fitt), sizeof(fitness));
-	evren.close();
+    evren.close();
     getch();
 }
 
@@ -191,7 +191,7 @@ void fitness::write()
 
 void fitness::displayall()
 {
-	system("cls");
+    system("cls");
     cout <<"\n INFORMATIONS OF ALL MEMBERS \n\n";
     fileobject.open("gymmember.dat", ios:: in |ios::binary);
     while (fileobject.read(reinterpret_cast<char *>(&fitt), sizeof(fitness))) 
@@ -209,7 +209,7 @@ void fitness::displayall()
 
 void fitness::show_member_info() 
 {
-	cout << "\nThe member number : " << membernumber<<endl;
+    cout << "\nThe member number : " << membernumber<<endl;
     cout << "\nThe name of the member : ";
     puts(name);
     cout << "\nThe surname of the member : ";
